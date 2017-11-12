@@ -18,7 +18,8 @@ public class ProbabilityGenerator<T> {
 	}
 	
 	private void addProbability(Double d) {
-		if (d < 0) {
+		System.out.println("test");
+		if (d < 0.0) {
 			probability.add(0.0);
 		} else {
 			probability.add(d);
@@ -44,7 +45,6 @@ public class ProbabilityGenerator<T> {
 		 while(count.get(0) < 1000) {
 			 Random random = new Random();
 			 double randDouble = probabilitySum * random.nextDouble();
-			 randDouble = 0.0;
 			 double sum = 0;
 			 int index = 0;
 			 while(sum < randDouble) {
