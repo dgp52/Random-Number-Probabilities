@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class ProbabilityGenerator<T> {
 	
@@ -8,6 +9,7 @@ public class ProbabilityGenerator<T> {
 	//Probability is represented as double
 	private List<Double> probability = new ArrayList<>();
 	private List<Integer> count = new ArrayList<>(); 
+	private double probabilitySum = 0;
 	
 	public void addElementProbability(T element, Double probability) {
 		addElement(element);
@@ -21,6 +23,31 @@ public class ProbabilityGenerator<T> {
 	
 	private void addElement(T t) {
 		elements.add(t);
+	}
+	
+	public void sumAndPick() {
+		sumProbability();
+		pickAnElement();
+	}
+	
+	private void sumProbability() {
+		for(Double d : probability) {
+			probabilitySum += d;
+		}
+	}
+	
+	private void pickAnElement () {
+		 while(count.get(0) < 1000) {
+			 Random random = new Random();
+			 double randDouble = probabilitySum * random.nextDouble();
+			 double sum = 0;
+			 int index = 0;
+			 while(sum < randDouble) {
+				 sum = sum + probability.get(index++);
+			 }
+			 int temp = Math.max(0, index-1);
+			 count.set(temp, count.get(temp)+1);
+		 }
 	}
 	
 	private void addCount() {
@@ -37,5 +64,9 @@ public class ProbabilityGenerator<T> {
 	
 	public void printCount() {
 		System.out.println(count.toString());
+	}
+	
+	public void printProbabilitySum() {
+		System.out.print(probabilitySum);
 	}
 }
