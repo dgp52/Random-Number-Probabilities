@@ -5,24 +5,18 @@ public class ProbabilityGenerator<T> {
 	
 	//Element can represent any object
 	private List<T> elements = new ArrayList<>();
-	//probability can represent any number (byte, double, float, integer, short, and long)
-	private List<Number> probability = new ArrayList<>();
+	//Probability is represented as double
+	private List<Double> probability = new ArrayList<>();
 	private List<Integer> count = new ArrayList<>(); 
 	
-	public void addElementProbability(T element, Number probability) {
+	public void addElementProbability(T element, Double probability) {
 		addElement(element);
 		addProbability(probability);
 		addCount();
 	}
 	
-	private void addProbability(Number t) {
-		System.out.print(t.byteValue() + " , "); 
-		System.out.print(t.shortValue()+ " , "); 
-		System.out.print(t.intValue()+ " , "); 
-		System.out.print(t.longValue()+ " , "); 
-		System.out.print(t.floatValue()+ " , "); 
-		System.out.println(t.doubleValue()); 
-		probability.add(t);
+	private void addProbability(Double d) {
+		probability.add(d);
 	}
 	
 	private void addElement(T t) {

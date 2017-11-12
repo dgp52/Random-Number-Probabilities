@@ -9,10 +9,9 @@ public class Main {
 	}
 	
 	public void addElements() {
-		probabilityGenerator.addElementProbability(new String("deep"), -0.0005);
-		probabilityGenerator.addElementProbability(new Element("apple", 10), -0xaf);
-		probabilityGenerator.addElementProbability(new String("mango"), -10.5);
-		probabilityGenerator.addElementProbability(new Element("orange", 90), -90);
+		probabilityGenerator.addElementProbability(new Element("apple", 10), 10.0);
+		probabilityGenerator.addElementProbability(new String("mango"), 30.0);
+		probabilityGenerator.addElementProbability(new Element("orange", 60), 60.0);
 	}
 	
 	public void print() {
