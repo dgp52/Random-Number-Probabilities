@@ -16,7 +16,7 @@ public class Main {
 	public void addElements() {
 		pg.addElementProbability(new Element("apple", 10), -10.0);
 		pg.addElementProbability(new String("mango"), 30.0);
-		pg.addElementProbability(new Element("orange", 60), 60.0);
+		pg.addElementProbability(new Element("orange", 60), 90.0);
 	}
 	
 	public void print() {

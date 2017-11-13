@@ -64,18 +64,18 @@ public class ProbabilityGenerator<T> {
 	}
 	
 	public void printElements() {
-		System.out.println(elements.toString());
+		System.out.println("Elements: " + elements.toString());
 	}
 	
 	public void printProbability() {
-		System.out.println(probability.toString());
+		System.out.println("Probability: " + probability.toString());
 	}
 	
 	public void printCount() {
-		System.out.println(count.toString());
+		System.out.println("Count: " + count.toString());
 	}
 	
 	public void printProbabilitySum() {
-		System.out.print(probabilitySum);
+		System.out.print("Sum: " + probabilitySum);
 	}
 }
