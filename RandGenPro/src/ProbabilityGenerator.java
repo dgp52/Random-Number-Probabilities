@@ -10,6 +10,8 @@ public class ProbabilityGenerator<T> {
 	private List<Double> probability = new ArrayList<>();
 	private List<Integer> count = new ArrayList<>(); 
 	private double probabilitySum = 0;
+	private final int COUNTER = 1000;
+	
 	
 	public void addElementProbability(T element, Double probability) {
 		addElement(element);
@@ -18,8 +20,8 @@ public class ProbabilityGenerator<T> {
 	}
 	
 	private void addProbability(Double d) {
-		System.out.println("test");
 		if (d < 0.0) {
+			//Negative probability is converted to zero
 			probability.add(0.0);
 		} else {
 			probability.add(d);
@@ -42,7 +44,8 @@ public class ProbabilityGenerator<T> {
 	}
 	
 	private void pickAnElement () {
-		 while(count.get(0) < 1000) {
+		int i = 0;
+		 while(i < COUNTER) {
 			 Random random = new Random();
 			 double randDouble = probabilitySum * random.nextDouble();
 			 double sum = 0;
@@ -52,6 +55,7 @@ public class ProbabilityGenerator<T> {
 			 }
 			 int temp = Math.max(0, index-1);
 			 count.set(temp, count.get(temp)+1);
+			 i++;
 		 }
 	}
 	
