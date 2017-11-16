@@ -38,6 +38,7 @@ public class ProbabilityGenerator<T> {
 	}
 	
 	private void sumProbability() {
+		probabilitySum = 0.0;
 		for(Double d : probability) {
 			probabilitySum += d;
 		}
